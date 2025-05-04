@@ -1,0 +1,30 @@
+20250502	10:15:50	36c7abde-0841-401c-a55a-3aadcd622f55	Error: Not allowed by CORS
+20250502	10:15:50	c5c4d6a4-0aa2-4254-a5f1-7b949f72bf23	Error: Not allowed by CORS
+20250502	12:04:54	56174f17-f771-4cc5-b514-5f4168c97458	SyntaxError: Expected double-quoted property name in JSON at position 15 (line 1 column 16)
+20250502	12:05:15	d69535e4-7e23-41fe-b1e6-4ec61efc679b	SyntaxError: Expected double-quoted property name in JSON at position 19 (line 1 column 20)
+20250502	12:05:15	9bdb9774-3ee8-4a32-bd5f-0c5bb1e7e12d	SyntaxError: Expected double-quoted property name in JSON at position 19 (line 1 column 20)
+20250502	13:23:54	5bd2c76f-64d3-4387-987c-002f7505af64	TypeError: res.status.json is not a function
+20250502	13:24:09	a5b880e1-a9bd-46f4-b495-f668e7fd197c	SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+20250502	13:24:48	27afdbb3-3c23-453b-bf25-b2fb0e841bad	SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+20250502	13:24:53	f5748e28-198c-4736-a0d6-0cfc0669c9d0	SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+20250502	13:25:07	3ea3cf42-d09c-41ee-9bd4-3094e88dea85	SyntaxError: Unexpected token ''', ..."ic", "id":'2' }" is not valid JSON
+20250502	13:31:38	6ac67cfd-58c4-4401-9a6a-9411c3d0a090	SyntaxError: Unexpected end of JSON input
+20250502	13:31:44	a4c29b85-e82d-49ad-8cbe-4a7026ec347a	SyntaxError: "undefined" is not valid JSON
+20250502	13:32:22	a75a3204-ba04-42f8-b7c2-5d179fced4ea	SyntaxError: "undefined" is not valid JSON
+20250502	13:32:23	7b3ed0d1-cdc8-4bb8-9915-db821d07566b	SyntaxError: "undefined" is not valid JSON
+20250502	13:32:25	7cc552bc-08cd-47b6-91cd-2fe2ce430f2b	SyntaxError: "undefined" is not valid JSON
+20250502	13:32:25	8d74f48a-eeef-4a72-a278-55746341dd4e	SyntaxError: "undefined" is not valid JSON
+20250502	13:32:25	59c98f3e-778d-4228-94cc-8342eef93c57	SyntaxError: "undefined" is not valid JSON
+20250502	13:32:52	6f1044d6-e81e-4236-970d-91a46ede49a5	SyntaxError: "undefined" is not valid JSON
+20250502	13:33:16	f20d1b33-f90e-4f30-84b7-068fd06b1e06	SyntaxError: "undefined" is not valid JSON
+20250502	13:33:17	7876b847-020f-4a28-8736-b731cfdc1a62	SyntaxError: "undefined" is not valid JSON
+20250502	13:33:17	e76240d9-ffd6-4bab-9d3c-61d08ddf7d17	SyntaxError: "undefined" is not valid JSON
+20250504	08:38:41	c7b1354b-5880-40c5-a0b4-2f1e4291b04c	TypeError: Cannot read properties of undefined (reading 'id')
+20250504	08:38:52	2cabd715-d1ab-46b9-8ec0-9e13afa39a53	TypeError: Cannot read properties of undefined (reading 'id')
+20250504	08:39:34	29aa02b7-75d9-4fe9-b6e5-c920806b29b9	TypeError: Cannot read properties of undefined (reading 'id')
+20250504	08:40:15	58d12e9f-c407-43e0-9563-40315046b11c	TypeError: Cannot read properties of undefined (reading 'id')
+20250504	08:54:03	9431b38a-cf55-449b-9549-7a9bcb36c4bd	ReferenceError: e is not defined
+20250504	08:54:06	34c9f27b-6c76-45e1-a12c-a16a1c7fbe94	ReferenceError: e is not defined
+20250504	08:54:07	d1b342d9-9f04-4d51-aea7-ed691725f261	ReferenceError: e is not defined
+20250504	08:54:39	ef4b3d90-705a-47e5-b7a5-ec8d7d1382ee	ReferenceError: e is not defined
+20250504	08:54:39	c874bd8c-fac5-4d79-a491-7167f511d6f2	ReferenceError: e is not defined
