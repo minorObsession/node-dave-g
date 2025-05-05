@@ -1,16 +1,6 @@
-const usersDB = {
-  users: require("../model/users.json"),
-  setUsers(data) {
-    this.users = data;
-  },
-};
-
+const User = require("../model/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-require("dotenv").config();
-
-const fsPromises = require("fs").promises;
-const path = require("path");
 
 const handleLogin = async (req, res) => {
   const { username, password } = req.body;
@@ -20,7 +10,7 @@ const handleLogin = async (req, res) => {
       .status(400)
       .json({ message: "Username and password are required" });
 
-  const foundUser = usersDB.users.find((u) => u.username === username);
+  const foundUser = await User.findOne({ username: username }).exec();
   if (!foundUser) return res.sendStatus(401); // 401 - unauthorized
 
   // evaluate password
@@ -47,6 +37,18 @@ const handleLogin = async (req, res) => {
       process.env.REFRESH_TOKEN_SECRET,
       { expiresIn: "1d" }
     );
+
+    // one way to add refresh token
+    // const result = await User.updateOne({
+    //   username: username,
+    //   refreshToken: refreshToken,
+    // });
+
+    // another way
+    foundUser.refreshToken = refreshToken;
+    const result = await foundUser.save();
+    console.log(result);
+    /*
     // saving refresh token with current user (in 'database')
     const otherUsers = usersDB.users.filter(
       (u) => u.username !== foundUser.username
@@ -60,7 +62,7 @@ const handleLogin = async (req, res) => {
       path.join(__dirname, "..", "model", "users.json"),
       JSON.stringify(usersDB.users)
     );
-
+*/
     // refresh token as http only cookie - more secure!
     res.cookie("jwt", refreshToken, {
       httpOnly: true,

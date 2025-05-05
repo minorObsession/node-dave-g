@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -8,7 +9,12 @@ const errorHandler = require("./middleware/errorHandler");
 const verifiyJwt = require("./middleware/verifyJwt");
 const cookieParser = require("cookie-parser");
 const credentials = require("./middleware/credentials");
+const mongoose = require("mongoose");
+const connectDB = require("./config/dbConn");
 const PORT = process.env.PORT || 3500;
+
+// connect to MongoDB
+connectDB();
 
 // 3 - custom middleware logger
 app.use(logger);
@@ -64,9 +70,18 @@ app.all("*", (req, res) => {
 // ! doesn't accept regex.. used for middleware
 app.use(errorHandler);
 
-app.listen(PORT, () => console.log(`server running on port ${PORT}`));
+mongoose.connection.once("open", () => {
+  console.log("connected to MongoDB");
+
+  app.listen(PORT, () => console.log(`server running on port ${PORT}`));
+});
 
 // * NOTES
+
+// ! Mongo db
+// SQL databases - built in relational structure
+// data is normalized
+
 // ! JWT notes
 // form of user id that is issued after auth happens - 1) access and 2) refresh token
 // 1) usually 5-15 min
