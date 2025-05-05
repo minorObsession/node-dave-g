@@ -27,12 +27,21 @@ const handleLogin = async (req, res) => {
   const match = await bcrypt.compare(password, foundUser.password);
 
   if (match) {
+    const roles = Object.values(foundUser.roles);
+
     // create and pass on JWTs
     const accessToken = jwt.sign(
-      { username: foundUser.username },
+      // add roles to accessToken
+      {
+        UserInfo: {
+          username: foundUser.username,
+          roles: roles,
+        },
+      },
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn: "30s" }
     );
+    // no need to send roles thru refresh token (it only exists to get a new access token)
     const refreshToken = jwt.sign(
       { username: foundUser.username },
       process.env.REFRESH_TOKEN_SECRET,
@@ -56,8 +65,8 @@ const handleLogin = async (req, res) => {
     res.cookie("jwt", refreshToken, {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000, // 1 day
-      sameSite: "None", // * to get rid of the flag
-      // secure: true, // * if true, refresh won't work
+      sameSite: "None", //  to get rid of the flag
+      // secure: true, // ! should be set to true in production!! in dev -> if true, refresh won't work in thunderClient!
     });
     // sending access token to the front end in json format
     // to be stored in memory on the frontend

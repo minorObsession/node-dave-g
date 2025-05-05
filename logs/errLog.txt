@@ -28,3 +28,4 @@
 20250504	08:54:07	d1b342d9-9f04-4d51-aea7-ed691725f261	ReferenceError: e is not defined
 20250504	08:54:39	ef4b3d90-705a-47e5-b7a5-ec8d7d1382ee	ReferenceError: e is not defined
 20250504	08:54:39	c874bd8c-fac5-4d79-a491-7167f511d6f2	ReferenceError: e is not defined
+20250504	16:37:17	c3f7ece1-8205-42c9-a70d-048b1722dbb7	TypeError: authHeader?.starsWith is not a function
